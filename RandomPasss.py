@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python
+﻿#!/usr/bin/env python3
 #-*- coding: utf-8 -*-
 
 __author__ = "Adam Cronos"
@@ -10,8 +10,8 @@ import sys
 import os
 
 print ("============================================================")
-print ("Za chwile wygenerujesz tablice znakow o zadanych wymiarach\n\
-i zdefiniowanej zawartosci (litery, cyfry, znaki specjalne).\n\
+print ("Za chwilę wygenerujesz tablicę znaków o zadanych wymiarach\n\
+i zdefiniowanej zawartości (litery, cyfry, znaki specjalne).\n\
 Teraz podasz potrzebne parametry.")
 print ("============================================================")
 
@@ -20,16 +20,16 @@ def tablica():
     import random
     out_file = open('tablica.txt', 'w')
     
-    x = int(input("\nPodaj liczbe znakow w wierszu: "))
-    y = int(input("Podaj liczbe wierszy: "))
-    char_set = input("Podaj zawartosc tablicy wg wzoru: \n\
-     A+a+c+z\n\
-     gdzie:\n\
-      A - duze litery A-Z\n\
-      a - male litery a-z\n\
-      c - cyfry 0-9\n\
-      z - znaki specjalne\n\
-      hex - znaki szesnastkowe 0-9, A-F\n")
+    x = int(input("\nPodaj liczbę znaków w wierszu: "))
+    y = int(input("Podaj liczbę wierszy: "))
+    char_set = input("Podaj zawartość tablicy wg wzoru: \n\
+    A+a+c+z\n\
+    gdzie:\n\
+    A - duże litery A-Z\n\
+    a - małe litery a-z\n\
+    c - cyfry 0-9\n\
+    z - znaki specjalne\n\
+    hex - znaki szesnastkowe 0-9, A-F\n")
 
     A = string.ascii_uppercase
     a = string.ascii_lowercase
@@ -37,8 +37,8 @@ def tablica():
     z = string.punctuation
     hex = str.upper(string.hexdigits)
 
-    decyzja = input("Czy chcesz oddzielac elementy wiersza spacjami aby zwiekszyc czytelnosc tablicy?\n\
-(niezalecane jesli chcesz bezposrednio kopiowac wiersze jako hasla)\n\
+    decyzja = input("Czy chcesz oddzielać elementy wiersza spacjami aby zwiększyć czytelność tablicy?\n\
+(niezalecane jesli chcesz bezpośrednio kopiować wiersze jako hasła)\n\
 [y/n] ")
     if decyzja == "y":
         separator = ' '
@@ -51,7 +51,7 @@ def tablica():
         out_file.write(wiersz + '\n')
     print("\n")
     print ("Oto wygenerowana tablica.\n\
-Zostala ona zapisana w pliku tablica.txt w folderze programu.\n")
+Została ona zapisana w pliku tablica.txt w folderze programu.\n")
     print
     os.system("pause")
 
@@ -59,8 +59,8 @@ Zostala ona zapisana w pliku tablica.txt w folderze programu.\n")
 try:
     tablica()
 except ValueError: 
-    print ("Pula znakow jest zbyt mala. Zmniejsz dlugosc wiersza lub zwieksz pule.")
+    print ("Pula znaków jest zbyt mała. Zmniejsz długość wiersza lub zwiększ pulę.")
     tablica()
 except:
-    print ("Wystapil blad. Program zakonczy dzialanie."), sys.exc_info()[0]
+    print ("Wystapił błąd. Program zakończy dzialanie."), sys.exc_info()[0]
     raise
